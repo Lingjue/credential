@@ -125,7 +125,7 @@ filterMpc = function(matches, mpc_f) {
   minmpc = mpc[matches[, "p_carbons_a"],"min_mpc"]/mpc_f
   maxmpc = mpc[matches[, "p_carbons_a"],"max_mpc"]*mpc_f
 
-  foo = data.table::na.omit(matches[
+  foo = na.omit(matches[
     (matches[,"p_mpc_a"] < maxmpc & matches[,"p_mpc_a"] > minmpc)
     ,,drop=F],cols="p_carbons_a")
 }
